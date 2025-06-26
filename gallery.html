@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Farah's Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f3e5f5, #ce93d8);
+      color: #333;
+    }
+
+    .wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .menu-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #ab47bc;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    .home-btn:hover {
+      background-color: #ba68c8;
+    }
+
+    #sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #7b1fa2;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 80px;
+    }
+
+    #sidebar a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    #sidebar a:hover {
+      background-color: #ab47bc;
+    }
+
+    .content {
+      padding: 50px 20px 20px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .gallery-card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 95%;
+      max-width: 1000px;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .gallery-card h2 {
+      color: #6a1b9a;
+      margin-bottom: 10px;
+    }
+
+    .gallery-card p {
+      color: #7b1fa2;
+      font-size: 1.05em;
+      margin-bottom: 30px;
+    }
+
+    .image-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .image-wrapper {
+      text-align: center;
+    }
+
+    .image-item {
+      width: 230px;
+      height: 200px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: 2px solid #d1c4e9;
+      background: white;
+    }
+
+    .image-item img,
+    .image-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-caption {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 0.95em;
+      color: #6a1b9a;
+    }
+
+    footer {
+      background-color: #f3e5f5;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #6a1b9a;
+    }
+
+    /* Emoji float */
+    #emoji-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .flying-emoji {
+      position: absolute;
+      animation: floatEmoji linear infinite;
+      opacity: 0.7;
+      font-size: 20px;
+    }
+
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .image-item {
+        width: 90%;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="emoji-container"></div>
+
+  <div class="wrapper">
+    <header>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <h1>Gallery</h1>
+      <a href="index.html" class="home-btn">Home</a>
+    </header>
+
+    <div id="sidebar">
+      <a href="personalinformation.html">Personal</a>
+      <a href="education.html">Education</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="skills.html">Skill</a>
+    </div>
+
+    <div class="content">
+      <div class="gallery-card">
+        <h2>My Favourite Moments 💜</h2>
+        <p>Here’s a glimpse into my memories, passions, and peaceful escapes.</p>
+
+        <div class="image-group">
+          <div class="image-wrapper">
+            <div class="image-item"><img src="SAW.jpg" alt="Novel"></div>
+            <div class="image-caption">Novel🌿</div>
+          </div>
+
+          <div class="image-wrapper">
+            <div class="image-item"><img src="family.jpg" alt="Family"></div>
+            <div class="image-caption">Family Holiday💖</div>
+          </div>
+
+          <div class="image-wrapper">
+            <div class="image-item"><img src="Taman.jpg" alt="Taman Botani"></div>
+            <div class="image-caption">Taman Botani🎪</div>
+          </div>
+
+          <div class="image-wrapper">
+            <div class="image-item"><img src="friend.jpg" alt="My Friend"></div>
+            <div class="image-caption">My Friend🦋</div>
+          </div>
+
+          <div class="image-wrapper">
+            <div class="image-item"><img src="myself.jpg" alt="My Self"></div>
+            <div class="image-caption">My Self🌸</div>
+          </div>
+
+          <div class="image-wrapper">
+            <div class="image-item"><img src="sky.jpg" alt="Evening Sky"></div>
+            <div class="image-caption">Evening Sky🌆</div>
+          </div>
+
+          <div class="image-wrapper">
+            <div class="image-item">
+              <video autoplay muted loop playsinline>
+                <source src="class.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="image-caption">My Video🎥</div>
+          </div>
+
+          <div class="image-wrapper">
+            <div class="image-item">
+              <video autoplay muted loop playsinline>
+                <source src="holiday.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="image-caption">Terengganu🎥</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Farah 💜 All Rights Reserved
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+    }
+
+    const emojiSet = ["✨", "💖", "🦋", "🌟", "💜", "💌"];
+    const emojiContainer = document.getElementById("emoji-container");
+
+   function createEmoji() {
+      const emoji = document.createElement("div");
+      emoji.className = "flying-emoji";
+      emoji.innerText = emojiSet[Math.floor(Math.random() * emojiSet.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.fontSize = (Math.random() * 10 + 20) + "px";
+      emoji.style.animationDuration = (Math.random() * 6 + 6) + "s";
+      emoji.style.animationDelay = Math.random() * 2 + "s";
+      emojiContainer.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 10000);
+    }
+
+    setInterval(createEmoji, 700);
+  </script>
+</body>
+</html>
