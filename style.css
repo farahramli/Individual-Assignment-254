@@ -1,0 +1,124 @@
+/* CSS INDEX */
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #b39ddb, #7e57c2);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    #intro-container {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+      flex: 1;
+    }
+
+    #page-header {
+      position: relative;
+      background-color: #6a1b9a;
+      padding: 40px 20px;
+      border-radius: 25px;
+      margin-bottom: 40px;
+    }
+
+    .header-gif {
+      position: absolute;
+      top: 10px;
+      width: 90px;
+      height: auto;
+    }
+
+    .header-gif.left { left: 15px; }
+    .header-gif.right { right: 15px; }
+
+    h1 {
+      font-size: 2.4em;
+      margin: 0;
+    }
+
+    .opening-line {
+      font-size: 1.3em;
+      margin: 35px auto;
+      width: 80%;
+      max-width: 600px;
+      color: #fce4ec;
+    }
+
+    .start-btn {
+      background-color: #d500f9;
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .start-btn:hover {
+      background-color: #aa00ff;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #fff, #f8bbd0, #e1bee7);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkleFade 0.5s ease-out;
+      z-index: 9999;
+    }
+
+    @keyframes sparkleFade {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      animation: floatEmoji linear infinite;
+      pointer-events: none;
+      opacity: 0.8;
+      z-index: 2;
+    }
+
+    @keyframes floatEmoji {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    #emoji-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    footer {
+      background-color: #6a1b9a;
+      color: #fce4ec;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.85em;
+    }
+
+    audio {
+      display: none;
+    }

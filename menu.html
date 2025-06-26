@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Datang!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top left, #fce4ec, #e1bee7);
+      color: #4a148c;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .menu-card {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      text-decoration: none;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 16px;
+      width: 150px;
+      height: 150px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: scale(1.08) rotate(1deg);
+      background: #f3e5f5;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .menu-card:active {
+      transform: scale(0.95) rotate(-1deg);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="personalinformation.html" class="menu-card">👤<br>Personal</a>
+  <a href="education.html" class="menu-card">🎓<br>Education</a>
+  <a href="hobbies.html" class="menu-card">🌸<br>Hobbies</a>
+  <a href="gallery.html" class="menu-card">🖼️<br>Gallery</a>
+  <a href="skills.html" class="menu-card">🛠️<br>Skills</a>
+  <a href="contact.html" class="menu-card">📬<br>Contact</a>
+
+</body>
+</html>
